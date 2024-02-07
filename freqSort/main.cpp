@@ -18,13 +18,10 @@ hashmap.insert({s[i],count_str(s,s[i])});
  unsigned c = hashmap.size();
 
  while(c>0){
-      unsigned counter=0;
        std::pair<char,unsigned> cur= *std::min_element(std::begin(hashmap),std::end(hashmap));
 t= cur.first;
-while(counter < cur.second){
-ans+=t;
-    ++counter;
-}
+ans+=string(cur.second,t);
+
 hashmap.erase(t);
      --c;
  }
